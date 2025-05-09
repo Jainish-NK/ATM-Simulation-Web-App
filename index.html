@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ATM of STATE BANK OF INDIA</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(to right, #4facfe, #00f2fe);
+        color: #fff;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .container {
+        background: rgba(255, 255, 255, 0.2);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+        width: 300px;
+        margin: auto;
+    }
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="number"] {
+        width: 80%;
+        padding: 8px;
+        margin: 10px 0;
+        border: none;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+    button {
+        background: #ff9966;
+        border: none;
+        padding: 10px 20px;
+        color: #fff;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    button:hover {
+        background: #ff5e62;
+    }
+
+    .hidden {
+        display: none;
+    }
+</style>
+</head>
+
+<body>
+    <h1>ATM of STATE BANK OF INDIA</h1>
+
+    <div class="container" id="para">
+        <p>Do you want to enter in ATM or Not?</p>
+        Yes <input type="radio" name="entry" value="yes">
+        No <input type="radio" name="entry" value="no">
+        <br>
+        <button onclick="enterInAtm()">Submit</button>
+    </div>
+
+    <h1 id="entryTxt"></h1>
+
+    <div class="container hidden" id="login">
+        Email: <input type="text" id="email"><br>
+        Password: <input type="password" id="pass"><br>
+        <button onclick="detailSubmit()">SUBMIT</button>
+    </div>
+    <h1 id="output"></h1>
+
+    <div class="container hidden" id="option">
+        <h2>Select Transaction</h2>
+        <input type="radio" name="transaction" value="deposit" onclick="showAmountInput()"> Deposit <br>
+        <input type="radio" name="transaction" value="withdraw" onclick="showAmountInput()"> Withdraw <br>
+        <input type="radio" name="transaction" value="balance" onclick="showAmountInput()"> Check Balance <br>
+
+        <div class="hidden" id="amountSection">
+            Enter Amount: <input type="number" id="amount"> <br>
+        </div>
+
+        <button onclick="handleTransaction()">Proceed</button>
+    </div>
+
+    <h1 id="transactionOutput"></h1>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
